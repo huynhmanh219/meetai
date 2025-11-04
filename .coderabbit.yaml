@@ -1,0 +1,35 @@
+# .coderabbit.yaml
+language: "vi" # Review bằng tiếng Việt
+reviews:
+  auto_review:
+    enabled: true
+    drafts: false # Không review draft PRs
+  request_changes_workflow: true
+  high_level_summary: true
+  poem: false # Tắt poem mode
+  review_status: true
+  
+early_access: false
+enable_free_tier: true
+
+chat:
+  auto_reply: true
+```
+
+## 3. **Sử dụng Coderabbit**
+
+### Cách 1: Tự động review khi tạo PR
+- Tạo Pull Request như bình thường
+- Coderabbit sẽ **tự động** comment và review code trong vài phút
+
+### Cách 2: Tag Coderabbit trong comment
+Trong PR, comment:
+```
+@coderabbitai review
+```
+
+Hoặc yêu cầu cụ thể:
+```
+@coderabbitai review performance issues
+@coderabbitai explain this function
+@coderabbitai suggest improvements for this component
