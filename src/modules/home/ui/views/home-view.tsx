@@ -7,11 +7,11 @@ import { useRouter } from "next/navigation";
 export const HomeView = () => {
     const router = useRouter();
     const {data:session} = authClient.useSession();
-    // if(!session){
-    //     return(
-    //     <p>loading...</p>
-    //     )
-    // }
+    if(!session){
+        return(
+        <p>loading...</p>
+        )
+    }
   return (
     <div className="flex flex-col p-4 gap-y-4">
       <p>Logged in as {session?.user.name}</p>
