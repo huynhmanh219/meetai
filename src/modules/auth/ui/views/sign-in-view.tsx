@@ -17,7 +17,7 @@ import {FaGithub,FaGoogle} from "react-icons/fa";
 
 
 const formSchema = z.object({
-    email:z.string().email(),
+    email:z.email(),
     password: z.string().min(1,{message:"Password is required"}),
 })
 export const SignInView = () =>{
@@ -173,7 +173,7 @@ export const SignInView = () =>{
                     </form>
                 </Form>
               
-                <div className="bg-radial from-green-500 to-green-800 relative hidden md:flex flex-col gap-y-4 items-center justify-center">
+                <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
                     <img src="/logo.svg" alt="Image" className="h-[92px] w-[92px]"/>
                     <p className="text-2xl font-semibold text-white">
                          Meet.AI
