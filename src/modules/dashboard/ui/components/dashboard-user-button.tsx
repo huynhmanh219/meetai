@@ -1,3 +1,4 @@
+"use client"
 import { GeneratedAvatar } from "@/components/generated-avatar";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { authClient } from "@/lib/auth-client";
@@ -7,12 +8,13 @@ import { DropdownMenu,
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger
- } from "@radix-ui/react-dropdown-menu";
+ } from "@/components/ui/dropdown-menu";
 import { ChevronDownIcon, CreditCardIcon, LogOutIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 const DashboardUserButton = () => {
     const {data,isPending} = authClient.useSession();
     const route = useRouter();
+    
     const onLogout = async()=>{
         await authClient.signOut({
             fetchOptions:{
@@ -28,7 +30,7 @@ const DashboardUserButton = () => {
     
     return ( 
     <DropdownMenu>
-        <DropdownMenuTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center justify-between bg-white/5 hover:bg-white/10 overflow-hidden">
+        <DropdownMenuTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center justify-between bg-white/5 hover:bg-white/10 overflow-hidden gap-x-2">
             {data.user.image?(
                 <Avatar>
                     <AvatarImage src={data.user.image}></AvatarImage>
